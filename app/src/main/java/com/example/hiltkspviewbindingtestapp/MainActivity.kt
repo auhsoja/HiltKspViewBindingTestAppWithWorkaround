@@ -12,6 +12,9 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
     @Inject
     lateinit var testClass: TestClass
 
+    @Inject
+    lateinit var assistedFactory: AssistedViewModel.Factory
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -20,6 +23,10 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         setContentView(binding.root)
 
         binding.textView.text = testClass.value
+    }
+
+    fun setupViewModel() {
+        val viewModel = assistedFactory.create(NullableContainer(null))
     }
 }
 
