@@ -26,7 +26,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
     }
 
     fun setupViewModel() {
-        val viewModel = assistedFactory.create(NullableContainer(null))
+        val viewModel = assistedFactory.create(NulledContainer())
     }
 }
 
